@@ -9,6 +9,11 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  btnClick: function(){
+    app.getExpressInfo('3338723629057',function(data){
+      console.log(data)
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

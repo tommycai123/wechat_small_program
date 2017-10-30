@@ -35,5 +35,21 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  getExpressInfo:function(num,cb){
+    wx.request({
+      url: 'https://kdwlcxf.market.alicloudapi.com/kdwlcx?no='+num, //仅为示例，并非真实的接口地址
+      data: {
+        x: '',
+        y: ''
+      },
+      // header: {
+      //   "Authorization": "APPCODE 4cf870fa5534492dbf3623efbf57adba"
+      // },
+      success: function (res) {
+        // console.log(res.data)
+        cb(res.data)
+      }
+    })
   }
 })
